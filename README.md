@@ -1,42 +1,31 @@
 # Lab7 PHP CodeIgniter 4 - Login System, Pagination, Search & File Upload
 Aplikasi web sederhana yang dibangun menggunakan CodeIgniter 4 untuk praktikum pemrograman web, mengimplementasikan sistem login, pagination, pencarian, dan upload file   gambar. Proyek ini mencakup fitur manajemen artikel dengan autentikasi untuk admin serta antarmuka publik untuk menampilkan artikel kepada pengunjung. Proyek ini dirancang sebagai bagian dari tugas praktikum 4, 5, dan 6 untuk mempelajari konsep dasar pengembangan web menggunakan framework PHP.
 
-Fitur Utama
+## Fitur Utama
 
-Sistem Login: Autentikasi pengguna dengan email dan password menggunakan password_hash() dan password_verify().
-Manajemen Artikel: Fitur CRUD (Create, Read, Update, Delete) untuk artikel, khusus untuk admin.
-Pagination: Pembatasan data artikel per halaman dengan navigasi halaman.
-Pencarian: Fitur pencarian artikel berdasarkan judul menggunakan query parameter.
-Upload Gambar: Mendukung unggah gambar untuk artikel dengan validasi file.
-Filter Autentikasi: Melindungi halaman admin dari akses tidak sah menggunakan filter.
-Antarmuka Publik: Menampilkan daftar artikel dan detail artikel untuk pengunjung umum.
-Session Management: Pengelolaan session untuk menyimpan data pengguna yang login.
-Database Seeder: Membuat data dummy untuk pengujian login admin.
-
-
-Teknologi yang Digunakan
-
-PHP: Versi 7.4 atau lebih tinggi
-CodeIgniter 4: Framework PHP untuk pengembangan aplikasi
-MySQL/MariaDB: Database untuk menyimpan data user dan artikel
-Composer: Manajemen dependensi PHP
-HTML5 & CSS3: Untuk antarmuka pengguna
-Bootstrap-inspired CSS: Untuk styling dasar yang responsif
+- Sistem Login: Autentikasi pengguna dengan email dan password menggunakan password_hash() dan password_verify().
+  Manajemen Artikel: Fitur CRUD (Create, Read, Update, Delete) untuk artikel, khusus untuk admin.
+- Pagination: Pembatasan data artikel per halaman dengan navigasi halaman.
+  Pencarian: Fitur pencarian artikel berdasarkan judul menggunakan query parameter.
+- Upload Gambar: Mendukung unggah gambar untuk artikel dengan validasi file.
+  Filter Autentikasi: Melindungi halaman admin dari akses tidak sah menggunakan filter.
+- Antarmuka Publik: Menampilkan daftar artikel dan detail artikel untuk pengunjung umum.
+- Session Management: Pengelolaan session untuk menyimpan data pengguna yang login.
+- Database Seeder: Membuat data dummy untuk pengujian login admin.
 
 
-Prasyarat
-Sebelum menginstal aplikasi, pastikan Anda memiliki:
+## Teknologi yang Digunakan
 
-PHP 7.4 atau lebih tinggi
-MySQL atau MariaDB
-Composer untuk mengelola dependensi
-Web server (Apache/Nginx) atau PHP built-in server
-Git untuk mengkloning repository
-Akses ke terminal/command line
+- PHP: Versi 7.4 atau lebih tinggi
+- CodeIgniter 4: Framework PHP untuk pengembangan aplikasi
+- MySQL/MariaDB: Database untuk menyimpan data user dan artikel
+- HTML5 & CSS3: Untuk antarmuka pengguna
+- Bootstrap-inspired CSS: Untuk styling dasar yang responsif
 
 
-Struktur Folder
+## Struktur Folder
 Berikut adalah struktur folder utama proyek:
+```
 lab7_php_ci/
 ├── app/
 │   ├── Config/
@@ -72,26 +61,17 @@ lab7_php_ci/
 │   ├── session/
 │   └── uploads/
 └── .env
+```
 
-
-Tata Cara Penginstalan
+## Tata Cara Penginstalan
 1. Clone Repository
-Kloning proyek dari GitHub ke direktori lokal Anda:
-git clone https://github.com/username/lab7_php_ci.git
-cd lab7_php_ci
-
+```git clone https://github.com/username/lab7_php_ci.git```
 Catatan: Ganti username dengan nama pengguna GitHub Anda.
-2. Install Dependensi
-Jalankan perintah berikut untuk menginstal dependensi CodeIgniter melalui Composer:
-composer install
-
-3. Konfigurasi File .env
-
+2. Konfigurasi File .env
 Salin file env menjadi .env:
-cp env .env
-
-
+```cp env .env```
 Edit file .env untuk mengatur konfigurasi database dan aplikasi:
+```
 CI_ENVIRONMENT = development
 
 app.baseURL = 'http://localhost:8080'
@@ -107,16 +87,15 @@ session.cookieName = 'ci_session'
 session.expiration = 7200
 session.savePath = writable/session
 session.regenerateDestroy = false
-
+```
 
 Sesuaikan database.default.username dan database.default.password dengan kredensial MySQL Anda.
 Pastikan app.baseURL sesuai dengan URL aplikasi Anda (misalnya, http://localhost:8080).
 
-
-
 4. Setup Database
 
 Buat database baru bernama lab7_ci4 di MySQL:
+```
 CREATE DATABASE lab7_ci4;
 
 
@@ -142,7 +121,7 @@ CREATE TABLE artikel (
     slug VARCHAR(200),
     PRIMARY KEY(id)
 );
-
+```
 
 Jalankan seeder untuk membuat data dummy user (admin):
 php spark db:seed UserSeeder
