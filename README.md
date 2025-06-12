@@ -130,31 +130,7 @@ CREATE TABLE artikel (
 Jalankan server development CodeIgniter menggunakan perintah:
 ```php spark serve```
 
-Aplikasi akan tersedia di http://localhost:8080.
-
-## Cara Penggunaan
-1. Testing Login
-
-- URL: http://localhost:8080/user/login
-- Email: admin@email.com
-- Password: admin123
-
-## 2. URL dan Fitur yang Dapat Diakses
-URL Publik (Tanpa Login)
-
-http://localhost:8080/ - Halaman utama
-http://localhost:8080/artikel - Daftar artikel publik
-http://localhost:8080/artikel/slug-artikel - Detail artikel
-http://localhost:8080/user - Daftar user
-http://localhost:8080/user/login - Form login
-
-URL Admin (Perlu Login)
-
-http://localhost:8080/admin/artikel - Dashboard admin artikel
-http://localhost:8080/admin/artikel/add - Tambah artikel baru
-http://localhost:8080/admin/artikel/edit/1 - Edit artikel dengan ID 1
-http://localhost:8080/admin/artikel/delete/1 - Hapus artikel dengan ID 1
-http://localhost:8080/user/logout - Logout dan kembali ke login
+- Aplikasi akan tersedia di http://localhost:8080.
 
 
 ## Troubleshooting
