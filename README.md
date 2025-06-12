@@ -123,46 +123,23 @@ CREATE TABLE artikel (
 );
 ```
 
-Jalankan seeder untuk membuat data dummy user (admin):
-php spark db:seed UserSeeder
+## Jalankan seeder untuk membuat data dummy user (admin):
+```php spark db:seed UserSeeder```
 
-Ini akan membuat akun admin dengan kredensial:
-
-Email: admin@email.com
-Password: admin123
-
-
-
-5. Buat Direktori untuk Upload Gambar
-
-Buat direktori public/gambar:
-mkdir public/gambar
-
-
-Berikan izin tulis pada direktori tersebut:
-chmod -R 755 public/gambar
-
-
-
-6. Konfigurasi Session
-Pastikan direktori writable/session ada dan memiliki izin tulis:
-mkdir writable/session
-chmod -R 755 writable/session
-
-7. Jalankan Aplikasi
+## 5. Jalankan Aplikasi
 Jalankan server development CodeIgniter menggunakan perintah:
-php spark serve
+```php spark serve```
 
 Aplikasi akan tersedia di http://localhost:8080.
 
-Cara Penggunaan
+## Cara Penggunaan
 1. Testing Login
 
-URL: http://localhost:8080/user/login
-Email: admin@email.com
-Password: admin123
+- URL: http://localhost:8080/user/login
+- Email: admin@email.com
+- Password: admin123
 
-2. URL dan Fitur yang Dapat Diakses
+## 2. URL dan Fitur yang Dapat Diakses
 URL Publik (Tanpa Login)
 
 http://localhost:8080/ - Halaman utama
@@ -180,44 +157,36 @@ http://localhost:8080/admin/artikel/delete/1 - Hapus artikel dengan ID 1
 http://localhost:8080/user/logout - Logout dan kembali ke login
 
 
-Troubleshooting
+## Troubleshooting
 1. Error "Unable to connect to database"
 
-Solusi:
-Pastikan MySQL service berjalan.
-Periksa kredensial database di file .env (username, password, hostname, dll.).
-Pastikan database lab7_ci4 sudah dibuat.
+## Solusi:
+- Pastikan MySQL service berjalan.
+- Periksa kredensial database di file .env (username, password, hostname, dll.).
+- Pastikan database lab7_ci4 sudah dibuat.
 
+## 2. File Upload Tidak Berfungsi
 
-
-2. File Upload Tidak Berfungsi
-
-Solusi:
+## Solusi:
 Pastikan direktori public/gambar sudah dibuat.
 Berikan izin tulis: chmod -R 755 public/gambar.
 Periksa pengaturan upload_max_filesize dan post_max_size di php.ini.
 
+## 3. Session Tidak Berfungsi
 
-
-3. Session Tidak Berfungsi
-
-Solusi:
+## Solusi:
 Pastikan direktori writable/session ada dan memiliki izin tulis: chmod -R 755 writable/session.
 Periksa pengaturan session di .env (session.driver, session.savePath).
 
+## 4. Route Tidak Ditemukan
 
-
-4. Route Tidak Ditemukan
-
-Solusi:
+## Solusi:
 Pastikan file app/Config/Routes.php dikonfigurasi dengan benar.
 Jalankan php spark routes untuk memeriksa daftar route yang tersedia.
 
+## 5. Halaman Admin Tidak Dapat Diakses
 
-
-5. Halaman Admin Tidak Dapat Diakses
-
-Solusi:
+## Solusi:
 Pastikan Anda sudah login menggunakan kredensial yang benar.
 Periksa filter autentikasi di app/Filters/Auth.php dan app/Config/Filters.php.
 
@@ -226,97 +195,56 @@ Periksa filter autentikasi di app/Filters/Auth.php dan app/Config/Filters.php.
 
 Perintah CLI yang Berguna
 
-Menjalankan server development:
-php spark serve
+## Menjalankan server development:
+```php spark serve```
 
 
-Membuat controller baru:
-php spark make:controller NamaController
+## Membuat controller baru:
+```php spark make:controller NamaController```
 
 
-Membuat model baru:
-php spark make:model NamaModel
+## Membuat model baru:
+```php spark make:model NamaModel```
 
 
-Membuat seeder:
-php spark make:seeder NamaSeeder
+## Membuat seeder:
+```php spark make:seeder NamaSeeder```
 
 
-Menjalankan seeder:
-php spark db:seed NamaSeeder
+## Menjalankan seeder:
+```php spark db:seed NamaSeeder```
 
 
-Melihat daftar routes:
-php spark routes
+## Melihat daftar routes:
+```php spark routes```
 
 
-Membersihkan cache:
-php spark cache:clear
+## Membersihkan cache:
+```php spark cache:clear```
 
 
 
 
-Kesimpulan Praktikum
+## Kesimpulan Praktikum
 Proyek ini mengimplementasikan konsep-konsep penting dalam pengembangan web menggunakan CodeIgniter 4:
-Praktikum 4 - Modul Login
+## Praktikum 4 - Modul Login
 
-Autentikasi dan Otorisasi: Sistem login dengan verifikasi password menggunakan password_hash() dan password_verify().
-Session Management: Pengelolaan session untuk menyimpan data pengguna yang login.
-Auth Filter: Melindungi halaman admin dari akses tidak sah.
-Database Seeder: Membuat data dummy untuk pengujian.
-MVC Pattern: Pemisahan logic antara Model, View, dan Controller.
+- Autentikasi dan Otorisasi: Sistem login dengan verifikasi password menggunakan password_hash() dan password_verify().
+- Session Management: Pengelolaan session untuk menyimpan data pengguna yang login.
+- Auth Filter: Melindungi halaman admin dari akses tidak sah.
+- Database Seeder: Membuat data dummy untuk pengujian.
+- MVC Pattern: Pemisahan logic antara Model, View, dan Controller.
 
-Praktikum 5 - Pagination dan Pencarian
+## Praktikum 5 - Pagination dan Pencarian
 
-Pagination: Pembatasan data per halaman menggunakan method paginate().
-Search Function: Pencarian artikel berdasarkan judul dengan method like().
-Query Parameter: Menangani parameter pencarian dengan getVar().
-Pager Links: Navigasi halaman dengan mempertahankan parameter pencarian.
+- Pagination: Pembatasan data per halaman menggunakan method paginate().
+- Search Function: Pencarian artikel berdasarkan judul dengan method like().
+- Query Parameter: Menangani parameter pencarian dengan getVar().
+- Pager Links: Navigasi halaman dengan mempertahankan parameter pencarian.
 
-Praktikum 6 - Upload File Gambar
+## Praktikum 6 - Upload File Gambar
 
-File Upload: Menangani upload gambar menggunakan method getFile().
-File Validation: Validasi file untuk keamanan.
-File Management: Menyimpan file ke direktori public/gambar.
-Form Handling: Menggunakan enctype="multipart/form-data" untuk form upload.
-
-Keuntungan Menggunakan CodeIgniter 4
-
-Framework ringan dengan performa cepat.
-Fitur bawaan seperti pagination, validation, dan session.
-Keamanan bawaan seperti CSRF dan XSS filtering.
-Sistem routing yang fleksibel dengan filter.
-Query builder untuk mencegah SQL injection.
-
-Konsep Keamanan
-
-Password Hashing: Enkripsi password menggunakan PASSWORD_DEFAULT.
-Session Security: Validasi session untuk autentikasi.
-File Upload Security: Validasi tipe file dan lokasi penyimpanan.
-Access Control: Filter auth untuk melindungi halaman admin.
-SQL Injection Prevention: Menggunakan Query Builder CodeIgniter.
-
-Best Practices
-
-Separation of Concerns: Pemisahan logic sesuai pola MVC.
-Code Reusability: Menggunakan model dan helper yang reusable.
-User Experience: Validasi form dengan flash messages.
-Responsive Design: CSS yang mendukung tampilan mobile.
-Clean Code: Struktur kode yang rapi dan mudah dipahami.
-
-
-Kontribusi
-Jika Anda ingin berkontribusi pada proyek ini:
-
-Fork repository ini.
-Buat branch baru (git checkout -b feature/nama-fitur).
-Commit perubahan Anda (git commit -m 'Menambahkan fitur X').
-Push ke branch (git push origin feature/nama-fitur).
-Buat Pull Request.
-
-
-Lisensi
-Proyek ini dilisensikan di bawah MIT License.
-
-Kontak
-Jika Anda memiliki pertanyaan atau membutuhkan bantuan, silakan buat issue di repository ini.
+- File Upload: Menangani upload gambar menggunakan method getFile().
+- File Validation: Validasi file untuk keamanan.
+- File Management: Menyimpan file ke direktori public/gambar.
+- Form Handling: Menggunakan enctype="multipart/form-data" untuk form upload.
