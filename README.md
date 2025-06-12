@@ -1,5 +1,5 @@
-Lab7 PHP CodeIgniter 4 - Login System, Pagination, Search & File Upload
-Aplikasi web sederhana yang dibangun menggunakan CodeIgniter 4 untuk praktikum pemrograman web, mengimplementasikan sistem login, pagination, pencarian, dan upload file gambar. Proyek ini mencakup fitur manajemen artikel dengan autentikasi untuk admin serta antarmuka publik untuk menampilkan artikel kepada pengunjung. Proyek ini dirancang sebagai bagian dari tugas praktikum 4, 5, dan 6 untuk mempelajari konsep dasar pengembangan web menggunakan framework PHP.
+## Lab7 PHP CodeIgniter 4 - Login System, Pagination, Search & File Upload
+- Aplikasi web sederhana yang dibangun menggunakan CodeIgniter 4 untuk praktikum pemrograman web, mengimplementasikan sistem login, pagination, pencarian, dan upload file   gambar. Proyek ini mencakup fitur manajemen artikel dengan autentikasi untuk admin serta antarmuka publik untuk menampilkan artikel kepada pengunjung. Proyek ini dirancang sebagai bagian dari tugas praktikum 4, 5, dan 6 untuk mempelajari konsep dasar pengembangan web menggunakan framework PHP.
 
 Fitur Utama
 
